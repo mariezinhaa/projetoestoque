@@ -2,11 +2,11 @@
 
 # Projeto Estoque
 
-## Este é um projeto de controle de estoque simples, permitindo o gerenciamento de produtos, quantidades disponíveis e movimentações. Sinta-se à vontade para usar, modificar e distribuir este código livremente, conforme os termos da licença MIT (veja abaixo).
+### Este é um projeto de controle de estoque simples, permitindo o gerenciamento de produtos, quantidades disponíveis e movimentações. Sinta-se à vontade para usar, modificar e distribuir este código livremente, conforme os termos da licença MIT (veja abaixo).
 
 # Visão Geral
 
-## O projeto consiste em um backend em Java com Spring Boot e um frontend em React, permitindo o cadastro de produtos, controle de entrada e saída de estoque, atualização de informações e visualização das quantidades disponíveis.
+### O projeto consiste em um backend em Java com Spring Boot e um frontend em React, permitindo o cadastro de produtos, controle de entrada e saída de estoque, atualização de informações e visualização das quantidades disponíveis.
 
 ---
 
