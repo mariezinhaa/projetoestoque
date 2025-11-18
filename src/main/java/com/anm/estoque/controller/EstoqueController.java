@@ -1,4 +1,4 @@
-// Exemplo de como deve ficar o EstoqueController.java
+
 package com.anm.estoque.controller;
 
 import com.anm.estoque.model.ProdutoModelo;
@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class EstoqueController {
 
     @Autowired
-    private ProdutoRepository pr; // Injeção agora deve funcionar
-
+    private ProdutoRepository pr; 
     @GetMapping("/listar")
     public Iterable<ProdutoModelo> listar() {
-        // Chamada ao Service
+        
         return pr.findAll(); 
     }
 }
