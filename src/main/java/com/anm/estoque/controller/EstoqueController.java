@@ -1,23 +1,37 @@
-
 package com.anm.estoque.controller;
 
 import com.anm.estoque.model.ProdutoModelo;
-import com.anm.estoque.repository.ProdutoRepository;
+import com.anm.estoque.model.RespostaModelo;
+import com.anm.estoque.service.EstoqueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/produtos")
+@CrossOrigin("*")
 public class EstoqueController {
 
     @Autowired
-    private ProdutoRepository pr; 
+    private EstoqueService es;
+
+    @GetMapping("/")
+    public void testeApi() {
+        System.out.println("A API está funcionando!");
+    }
+
     @GetMapping("/listar")
     public Iterable<ProdutoModelo> listar() {
-        
-        return pr.findAll(); 
+        return es.listar();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProdutoModelo> buscarPorId(@PathVariable Long id) {
+        ProdutoModelo produto = es.buscarPorId(id);
+        return ResponseEntity.ok(produto);
+    }
+
+    @DeleteMapping("/remover/{id}")
+    public ResponseEntity<RespostaModelo> deletarProduto(@PathVariable Long id) {
+        return es.deletarProduto(id);
     }
 }
